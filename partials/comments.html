@@ -1,23 +1,27 @@
-<div ng-show="topic.comments.length">
-  <h2>Comments for {{ topic.title }}</h2>
-  <ul>
-    <li ng-repeat="item in topic.comments">
-      {{ item.subject }}
-    </li>
-  </ul>
+
+
+<div class="row">
+  <div class="col-md-8" ng-show="topic.comments.length">
+    <h2>Comments for {{ topic.title }}</h2>
+    <ul>
+      <li ng-repeat="item in topic.comments">
+        {{ item.subject }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Add a comment to {{ topic.title }}</h2>
+    <form ng-submit="addComment()" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="commentSubject" class="form-control" placeholder="Enter your comment">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-warning">Add comment</button>
+    </form>
+  </div>
 </div>
 
 <div>
-  <h2>Add a comment to {{ topic.title }}</h2>
-  <form ng-submit="addComment()" class="form-inline" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="commentSubject" class="form-control" placeholder="Enter your comment">
-    </div>
-    <br>
-    <button type="submit" class="btn btn-warning">Add comment</button>
-  </form>
-</div>
-
-<div>
-  <a ui-sref="topics">Topics</a>
+  <a ui-sref="topics">Back to topics</a>
 </div>

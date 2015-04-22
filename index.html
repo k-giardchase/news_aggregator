@@ -10,17 +10,34 @@
     <script src="controllers/CommentsController.js"></script>
     <script src="services/TopicsFactory.js"></script>
     <script src="services/CommentsFactory.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">Nerd Sourced</a>
+          </div>
+          <div class="collapse navbar-collapse" id="mynav">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="topics">Topics</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <div class="jumbotron hidden-xs ">
       </div>
       <div ui-view>
-
       </div>
-
     </div>
   </body>
 </html>

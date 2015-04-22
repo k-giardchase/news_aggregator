@@ -1,37 +1,40 @@
-<div ng-show="topics.length">
-  <h1>Here are all of the topics to read about:</h1>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in topics">
-        <td><a ui-sref="comments({ topicId: item.id})">{{ item.title }}</a></td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.description }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="row">
 
-<div class="col-md-4">
-  <h3>Add a new topic</h3>
-  <form ng-submit="TopicsFactory.addTopic()" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="TopicsFactory.topicTitle" class="form-control" placeholder="Enter the title here">
-    </div>
-    <div class="form-group">
-      <input type="text" ng-model="TopicsFactory.topicCategory" class="form-control" placeholder="Enter the category here">
-    </div>
-    <div class="form-group">
-      <input type="text" ng-model="TopicsFactory.topicDescription" class="form-control" placeholder="Enter the description here">
-    </div>
-    <button type="submit" class="btn btn-warning">Submit</button>
-  </form>
-</div>
+  <div class="col-md-8" ng-show="topics.length">
+    <h2>Here are all of the topics to read about:</h2>
 
-<div ui-view> </div>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in topics">
+          <td><a ui-sref="comments({ topicId: item.id})">{{ item.title }}</a></td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Add a new topic</h3>
+    <form ng-submit="TopicsFactory.addTopic()" role="form" id="topicj">
+      <div class="form-group">
+        <input type="text" ng-model="TopicsFactory.topicTitle" class="form-control" placeholder="Enter the title here" required>
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="TopicsFactory.topicCategory" class="form-control" placeholder="Enter the category here" required>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" form="topicj" ng-model="TopicsFactory.topicDescription" rows="4" cols="80" placeholder="Enter description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+  </div>
+
+</div>
