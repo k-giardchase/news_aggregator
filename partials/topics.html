@@ -1,10 +1,17 @@
 <div ng-show="topics.length">
   <h1>Here are all of the topics to read about:</h1>
-  <ul>
-    <li ng-repeat="item in topics">
-    <a ui-sref="topics.comments({ topicId: item.id})">{{ item.name }}</a>
-    </li>
-  </ul>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in topics">
+        <td><a ui-sref="topics.comments({ topicId: item.id})">{{ item.title }}</a></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="col-md-4">
@@ -18,3 +25,10 @@
 </div>
 
 <div ui-view> </div>
+
+<!--
+<ul>
+  <li ng-repeat="item in topics">
+  <a ui-sref="topics.comments({ topicId: item.id})">{{ item.title }}</a>
+  </li>
+</ul> -->
