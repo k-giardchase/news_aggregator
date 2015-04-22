@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="item in topics">
-        <td><a ui-sref="topics.comments({ topicId: item.id})">{{ item.title }}</a></td>
+        <td><a ui-sref="comments({ topicId: item.id})">{{ item.title }}</a></td>
         <td>{{ item.category }}</td>
         <td>{{ item.description }}</td>
       </tr>
@@ -31,10 +31,3 @@
 </div>
 
 <div ui-view> </div>
-
-<!--
-<ul>
-  <li ng-repeat="item in topics">
-  <a ui-sref="topics.comments({ topicId: item.id})">{{ item.title }}</a>
-  </li>
-</ul> -->

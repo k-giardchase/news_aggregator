@@ -12,9 +12,9 @@ nerdSourced.config(function($stateProvider) {
     controller: "TopicsCtrl"
   });
 
-  $stateProvider.state('topics.comments', {
+  $stateProvider.state('comments', {
     url: "/:topicId",
-    templateUrl: "partials/topics.comments.html",
+    templateUrl: "partials/comments.html",
     controller: 'CommentsCtrl'
   });
 });
